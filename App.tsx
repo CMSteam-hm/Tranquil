@@ -7,6 +7,7 @@ import {
   MessageCircle, Info,
   Instagram, Twitter, Linkedin, Facebook
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import HomeView from './views/HomeView';
 import FormView from './views/FormView';
 import PolicyView from './views/PolicyView';
@@ -285,6 +286,9 @@ const App: React.FC = () => {
           <MessageCircle size={28} />
         </a>
       </Tooltip>
+      
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 };
