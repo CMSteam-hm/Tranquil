@@ -1,0 +1,102 @@
+
+/* Tranquil Mental Health - Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: #14b8a6;
+  --primary-hover: #0d9488;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Components */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar for Clinical Feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* High-End Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-clinical-entry {
+  animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: Focus States */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Marquee Scroll for Testimonials/Gallery */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-slow {
+  animation: scroll 70s linear infinite;
+}
+
+.animate-scroll-gallery {
+  animation: scroll 45s linear infinite;
+}
+
+.animate-scroll-slow:hover, 
+.animate-scroll-gallery:hover {
+  animation-play-state: paused;
+}
+
+/* Image Hover Treatments */
+.clinical-image-hover {
+  transition: all 0.5s ease;
+  filter: grayscale(20%);
+}
+
+.clinical-image-hover:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
