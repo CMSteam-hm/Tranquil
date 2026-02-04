@@ -81,9 +81,9 @@ const AboutView: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: <Target />, title: "Our Mission", text: "To provide evidence-based psychiatric care that empowers individuals to reclaim their lives." },
+              { icon: <Target />, title: "Our Mission", text: "At Tranquil mental health and wellness, we bring a wealth of knowledge and expertise to our practice" },
               { icon: <Heart />, title: "Our Values", text: "Compassion, Integrity, Innovation, and Inclusivity drive every decision we make." },
-              { icon: <Users />, title: "Our Approach", text: "We treat the whole person, not just the symptoms, integrating medication, therapy, and lifestyle." }
+              { icon: <Users />, title: "Our Approach", text: "We prioritize creating a safe, non-judgmental environment where our patients feel heard and supported while delivering evidence based treatments" }
             ].map((item, i) => (
               <div key={i} className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm">
                 <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/20 text-primary-600 rounded-2xl flex items-center justify-center mb-6">

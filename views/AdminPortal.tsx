@@ -51,11 +51,11 @@ const AdminPortal: React.FC = () => {
           <div className="mb-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-2xl border border-primary-100 dark:border-primary-800/30 flex flex-col gap-2 text-left">
             <div className="flex items-center gap-2">
               <Info className="text-primary-600 shrink-0" size={16} />
-              <p className="text-[10px] font-black text-primary-700 dark:text-primary-300 uppercase tracking-widest">Authorized for Demo:</p>
+              <p className="text-[10px] font-black text-primary-700 dark:text-primary-300 uppercase tracking-widest">Authorized mail only:</p>
             </div>
             <ul className="text-[10px] font-mono text-slate-500 dark:text-slate-400 space-y-1 pl-6 list-disc">
-              <li>admin@tranquil.com</li>
-              <li>doctor@tranquil.com</li>
+              <li>Personel at adminitrative level</li>
+              <li>only Tranquil Official mail are accepted</li>
             </ul>
           </div>
 

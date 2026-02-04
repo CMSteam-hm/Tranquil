@@ -139,7 +139,9 @@ const HomeView: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-[15px] font-black uppercase tracking-[0.5em] mb-8 opacity-80">Welcome to Tranquil Mental Health and Wellness</h2>
           <p className="text-2 md:text-4x font-bold leading-tight tracking-tight">
-            "At Tranquil Mental Health and Wellness, we are dedicated to providing expert psychiatric care. Our team of experienced professionals is committed to helping you navigate your mental health journey with compassion and expertise. From anxiety and depression to more complex psychiatric conditions, our services are tailored to meet your unique needs. We invite you to explore our website, learn about our comprehensive range of services, and take the first step towards a healthier, more balanced life. Your mental well-being is our top priority, and we're here to support you every step of the way."
+            "At Tranquil mental health and wellness, we bring a wealth of knowledge and expertise to our practice.
+            <br/>
+            We prioritize creating a safe, non-judgmental environment where our patients feel heard and supported while delivering evidence based treatments"
           </p>
         </div>
       </section>
