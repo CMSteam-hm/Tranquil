@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranquil Mental Health and Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                200: '#99f6e4',
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                800: '#115e59',
+                900: '#134e4a',
+              },
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- External Public Styles -->
+    <link rel="stylesheet" href="public/styles.css">
+    
+    <!-- Dialogflow Messenger Assets -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+        "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+        "recharts": "https://esm.sh/recharts@^3.6.0",
+        "@emailjs/browser": "https://esm.sh/@emailjs/browser@^4.4.1"
+      }
+    }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+    <div id="root"></div>
+
+    <!-- Vertex AI Conversational Agent (Transbot) -->
+    <df-messenger
+      location="us-central1"
+      project-id="tranquil-wellness-app"
+      agent-id="23fde780-2951-49a5-a1a9-865bab9f6226"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+        chat-title="Transbot">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+    
+    <style>
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: 'Inter', sans-serif;
+        --df-messenger-chat-background: #C8E6C9;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+      }
+      @media (max-width: 640px) {
+        df-messenger {
+          bottom: 80px; 
+        }
+      }
+    </style>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

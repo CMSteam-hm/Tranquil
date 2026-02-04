@@ -1,0 +1,8 @@
+{
+  "name": "Tranquil Mental Health and Wellness - Modern Psychiatric Consultation Portal",
+  "description": "A professional, ADA-compliant psychiatric consultation platform featuring multi-step medical forms, an AI-powered triage chatbot, and secure patient portals.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
