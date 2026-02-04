@@ -80,11 +80,26 @@ const HomeView: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-12 pb-32 bg-gradient-to-br from-primary-50 to-white dark:from-slate-900 dark:to-slate-950">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10 animate-in fade-in slide-in-from-left-8 duration-1000">
+      <section className="relative pt-32 pb-48 flex items-center min-h-[85vh] overflow-hidden">
+        {/* Background Images */}
+        <div className="absolute inset-0 z-0">
+          {heroImages.map((img, idx) => (
+            <div 
+              key={idx} 
+              className={`absolute inset-0 transition-opacity duration-[2s] ease-in-out ${
+                idx === currentHeroIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img src={img} alt="Clinical Scene" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/30"></div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-3xl space-y-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <div className="flex flex-wrap gap-3">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 font-black text-[10px] uppercase tracking-[0.2em]">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-2xl shadow-sm border border-white/20 font-black text-[10px] uppercase tracking-[0.2em]">
                 <ShieldCheck size={16} />
                 <span>Clinical Excellence</span>
               </div>
@@ -98,10 +113,10 @@ const HomeView: React.FC = () => {
               </div>
             </div>
 
-            <h1 className="text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[0.95] tracking-tighter">
-              Revitalize Your <span className="text-primary-600">Mind</span> at Tranquil Mental Health and Wellness.
+            <h1 className="text-6xl lg:text-8xl font-black text-white leading-[0.95] tracking-tighter">
+              Revitalize Your Mind at <span className="text-primary-500">Tranquil Mental</span> Health and Wellness.
             </h1>
-            <p className="text-xl text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed font-medium">
+            <p className="text-xl text-slate-200 max-w-lg leading-relaxed font-medium">
               Empowering you towards mental wellness. Discover your path to mental health today.
             </p>
             <div className="flex flex-wrap gap-5 pt-4">
@@ -111,24 +126,8 @@ const HomeView: React.FC = () => {
               </Link>
               <div className="flex flex-col justify-center">
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">New Patient?</p>
-                <Link to="/forms" className="text-primary-600 dark:text-primary-400 font-black text-sm hover:underline">Complete Intake Forms</Link>
+                <Link to="/forms" className="text-white font-black text-sm hover:underline">Complete Intake Forms</Link>
               </div>
-            </div>
-          </div>
-          
-          <div className="relative animate-in fade-in zoom-in duration-1000 delay-300">
-            <div className="absolute -inset-10 bg-primary-400/10 blur-[100px] rounded-full"></div>
-            <div className="relative overflow-hidden rounded-[3.5rem] shadow-2xl bg-white dark:border-slate-800 h-[450px] lg:h-[600px] border-[12px] border-white dark:border-slate-800">
-              {heroImages.map((img, idx) => (
-                <div 
-                  key={idx} 
-                  className={`absolute inset-0 transition-opacity duration-[1.5s] ease-in-out ${
-                    idx === currentHeroIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                  }`}
-                >
-                  <img src={img} alt="Clinical Scene" className="w-full h-full object-cover" />
-                </div>
-              ))}
             </div>
           </div>
         </div>
