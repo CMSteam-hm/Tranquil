@@ -153,7 +153,7 @@ const AdminDashboard: React.FC = () => {
               placeholder="Authorization Key"
               className="w-full py-5 px-6 bg-slate-50 dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-2xl outline-none text-center font-mono tracking-[0.2em] text-lg focus:border-primary-500 transition-all uppercase"
             />
-            <button type="submit" className="w-full py-5 bg-primary-600 text-white rounded-2xl font-black text-lg hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/20">
+            <button type="submit" className="w-full py-5 bg-[#CC5500] text-white rounded-2xl font-black text-lg hover:bg-[#B84D00] transition-all shadow-xl shadow-[#E06600]/20">
               Verify Credential
             </button>
           </form>
@@ -175,7 +175,7 @@ const AdminDashboard: React.FC = () => {
             <p className="text-slate-500 dark:text-slate-400 mt-2 font-medium">Real-time patient intake and workflow management.</p>
           </div>
           <div className="flex gap-4">
-            <button className="px-8 py-3.5 bg-primary-600 text-white rounded-2xl text-sm font-black shadow-lg shadow-primary-500/30 hover:bg-primary-700 transition-all flex items-center gap-2">
+            <button className="px-8 py-3.5 bg-[#CC5500] text-white rounded-2xl text-sm font-black shadow-lg shadow-[#E06600]/30 hover:bg-[#B84D00] transition-all flex items-center gap-2">
               <TrendingUp size={18}/> Performance Data
             </button>
           </div>
@@ -308,7 +308,7 @@ const AdminDashboard: React.FC = () => {
                             <button 
                               onClick={() => toggleAttended(s.id, idx)}
                               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black transition-all ${
-                                s.attended ? 'bg-slate-200 text-slate-600' : 'bg-primary-600 text-white hover:bg-primary-700 shadow-lg shadow-primary-500/20'
+                                s.attended ? 'bg-slate-200 text-slate-600' : 'bg-[#CC5500] text-white hover:bg-[#B84D00] shadow-lg shadow-[#E06600]/20'
                               }`}
                             >
                               {s.attended ? <><RotateCcw size={14}/> Reopen</> : <><Check size={14}/> Mark Attended</>}

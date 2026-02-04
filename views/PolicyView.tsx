@@ -163,7 +163,7 @@ const PolicyView: React.FC<PolicyViewProps> = ({ type }) => {
             </p>
             <Link 
               to="/contact" 
-              className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-all shadow-lg shadow-primary-500/20"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#CC5500] text-white rounded-xl font-bold hover:bg-[#B84D00] transition-all shadow-lg shadow-[#E06600]/20"
             >
               Contact Support <ChevronRight size={18} />
             </Link>

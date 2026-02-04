@@ -95,8 +95,8 @@ const TestimonialView: React.FC = () => {
             Take the first step toward lasting change. Our clinicians are here to support your mental health journey with precision and compassion.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6 relative">
-            <a href="#/booking" className="px-10 py-4 bg-white text-primary-600 rounded-2xl font-black text-lg shadow-xl hover:scale-105 transition-all">Schedule Evaluation</a>
-            <a href="#/contact" className="px-10 py-4 bg-primary-700 text-white rounded-2xl font-black text-lg border border-primary-500/50 hover:bg-primary-800 transition-all">Submit Feedback</a>
+            <a href="#/booking" className="px-10 py-4 bg-white text-[#CC5500] rounded-2xl font-black text-lg shadow-xl hover:scale-105 transition-all">Schedule Evaluation</a>
+            <a href="#/contact" className="px-10 py-4 bg-[#B84D00] text-white rounded-2xl font-black text-lg border border-[#E06600]/50 hover:bg-[#A34400] transition-all">Submit Feedback</a>
           </div>
         </div>
       </div>

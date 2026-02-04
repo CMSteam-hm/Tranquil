@@ -74,7 +74,7 @@ const AdminPortal: React.FC = () => {
                 required
               />
             </div>
-            <button type="submit" className="w-full py-5 bg-primary-600 text-white rounded-2xl font-black text-lg hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/20 active:scale-95">
+            <button type="submit" className="w-full py-5 bg-[#CC5500] text-white rounded-2xl font-black text-lg hover:bg-[#B84D00] transition-all shadow-xl shadow-[#E06600]/20 active:scale-95">
               Verify Identity
             </button>
           </form>
@@ -110,21 +110,21 @@ const AdminPortal: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Main AppSheet Button */}
           <div className="md:col-span-2 group relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-sky-600 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#CC5500] to-sky-600 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <a 
               href={appsheetUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl hover:-translate-y-2 transition-all duration-500 text-center overflow-hidden"
             >
-              <div className="w-24 h-24 bg-primary-600 text-white rounded-3xl flex items-center justify-center mb-8 shadow-2xl shadow-primary-500/40 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-24 h-24 bg-[#CC5500] text-white rounded-3xl flex items-center justify-center mb-8 shadow-2xl shadow-[#E06600]/40 group-hover:scale-110 transition-transform duration-500">
                 <Database size={48} />
               </div>
               <h3 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Launch AppSheet Clinical Manager</h3>
               <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-10 font-medium leading-relaxed text-lg">
                 Access patient records, appointment schedules, and diagnostic logs in the full-featured clinical management environment.
               </p>
-              <div className="flex items-center gap-3 px-8 py-4 bg-primary-600 text-white rounded-2xl font-black text-lg shadow-lg">
+              <div className="flex items-center gap-3 px-8 py-4 bg-[#CC5500] text-white rounded-2xl font-black text-lg shadow-lg">
                 Enter Dashboard <ExternalLink size={20} />
               </div>
               

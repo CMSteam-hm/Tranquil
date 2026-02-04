@@ -341,7 +341,7 @@ const App: React.FC = () => {
               <Tooltip text="Book psychiatric evaluation">
                 <Link 
                   to="/booking"
-                  className="px-6 py-3 bg-primary-600 text-white rounded-xl text-xs font-black shadow-lg shadow-primary-500/30 hover:bg-primary-700 hover:scale-105 transition-all flex items-center gap-2"
+                  className="px-6 py-3 bg-[#CC5500] text-white rounded-xl text-xs font-black shadow-lg shadow-[#E06600]/30 hover:bg-[#B84D00] hover:scale-105 transition-all flex items-center gap-2"
                 >
                   <Calendar size={16} />
                   Book Now
@@ -358,7 +358,7 @@ const App: React.FC = () => {
 
             <div className="md:hidden flex items-center gap-2">
                <button onClick={toggleTheme} className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl">{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</button>
-               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2.5 bg-primary-600 text-white rounded-xl shadow-lg"><Menu size={20} /></button>
+               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2.5 bg-[#CC5500] text-white rounded-xl shadow-lg"><Menu size={20} /></button>
             </div>
           </div>
         </div>
@@ -371,7 +371,7 @@ const App: React.FC = () => {
                 {link.icon} {link.name}
               </Link>
             ))}
-            <Link to="/booking" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-4 px-4 py-4 bg-primary-600 text-white rounded-2xl font-black shadow-lg">
+            <Link to="/booking" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-4 px-4 py-4 bg-[#CC5500] text-white rounded-2xl font-black shadow-lg">
               <Calendar size={18} /> Book Now
             </Link>
           </div>

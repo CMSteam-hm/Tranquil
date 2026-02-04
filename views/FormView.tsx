@@ -157,7 +157,7 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
                   <button 
                     type="submit" 
                     disabled={formStatus === 'submitting'}
-                    className="w-full py-4 bg-primary-600 text-white rounded-xl font-black text-lg hover:bg-primary-700 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-[#CC5500] text-white rounded-xl font-black text-lg hover:bg-[#B84D00] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                   </button>

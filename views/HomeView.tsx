@@ -292,10 +292,10 @@ const HomeView: React.FC = () => {
               Choose Tranquil Mental Health and Wellness for a compassionate, evidence-based approach to mental health care. Our dedicated team and personalized services make us a trusted choice in Merced.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6 relative">
-              <Link to="/booking" className="px-12 py-5 bg-white text-primary-600 rounded-[1.5rem] font-black text-xl hover:scale-105 transition-all shadow-xl">
+              <Link to="/booking" className="px-12 py-5 bg-white text-[#CC5500] rounded-[1.5rem] font-black text-xl hover:scale-105 transition-all shadow-xl">
                 Book Evaluation
               </Link>
-              <Link to="/contact" className="px-12 py-5 bg-primary-700 text-white border border-primary-500/50 rounded-[1.5rem] font-black text-xl hover:bg-primary-800 transition-all">
+              <Link to="/contact" className="px-12 py-5 bg-[#B84D00] text-white border border-[#E06600]/50 rounded-[1.5rem] font-black text-xl hover:bg-[#A34400] transition-all">
                 Questions? Email Us
               </Link>
             </div>

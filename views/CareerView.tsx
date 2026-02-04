@@ -50,7 +50,7 @@ const CareerView: React.FC = () => {
               We are expanding our team of compassionate clinicians and dedicated administrative professionals. Work in a cutting-edge practice where technology meets human empathy.
             </p>
             <div className="flex gap-4">
-              <a href="#vacancies" className="px-8 py-4 bg-primary-600 text-white rounded-2xl font-black shadow-xl shadow-primary-500/20 hover:scale-105 transition-all">View Vacancies</a>
+              <a href="#vacancies" className="px-8 py-4 bg-[#CC5500] text-white rounded-2xl font-black shadow-xl shadow-[#E06600]/20 hover:scale-105 transition-all">View Vacancies</a>
               <a href="#/contact" className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl font-black border border-slate-100 dark:border-slate-800 hover:bg-slate-50 transition-all">General Inquiry</a>
             </div>
           </div>
@@ -115,7 +115,7 @@ const CareerView: React.FC = () => {
                   </p>
                 </div>
                 <div className="shrink-0">
-                  <a href="#/contact" className="px-8 py-4 bg-slate-900 dark:bg-slate-800 text-white rounded-2xl font-black text-sm flex items-center gap-2 hover:bg-primary-600 transition-all">
+                  <a href="#/contact" className="px-8 py-4 bg-slate-900 dark:bg-slate-800 text-white rounded-2xl font-black text-sm flex items-center gap-2 hover:bg-[#CC5500] transition-all">
                     Apply Now <ArrowRight size={18} />
                   </a>
                 </div>
@@ -128,7 +128,7 @@ const CareerView: React.FC = () => {
            <p className="text-xs font-black uppercase tracking-[0.5em] mb-4 opacity-50">General Applications</p>
            <h3 className="text-3xl font-black mb-6">Don't see the right role?</h3>
            <p className="text-slate-400 max-w-xl mx-auto mb-10 font-medium">We are always looking for talented psychiatric professionals. Send your CV to <span className="text-primary-400">careers@tranquilmentalhealth.com</span> for future consideration.</p>
-           <a href="#/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-primary-600 text-white rounded-2xl font-black text-lg hover:bg-primary-700 transition-all">Send Your CV</a>
+           <a href="#/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-[#CC5500] text-white rounded-2xl font-black text-lg hover:bg-[#B84D00] transition-all">Send Your CV</a>
         </div>
       </div>
     </div>
