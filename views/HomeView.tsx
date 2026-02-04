@@ -148,13 +148,13 @@ const HomeView: React.FC = () => {
 
       {/* Services Section */}
       <section className="py-32 bg-white dark:bg-slate-700 relative">
-        <div className="absolute inset-0 z-0 opacity-3 dark:opacity-5">
+        <div className="absolute inset-0 z-0 opacity-3 dark:opacity-3">
             <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=2070&q=80" alt="Services Background" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="max-w-3xl mb-24 space-y-4">
-             <h6 className="text-primary-600 font-white uppercase tracking-[0.3em] text-[10px]">Clinical Services</h6>
-             <h2 className="text-4xl lg:text-5xl font-white text-slate-900 dark:text-white tracking-tight">Our Comprehensive Psychiatric Services.</h2>
+             <h6 className="text-primary-600 font-black uppercase tracking-[0.3em] text-[10px]">Clinical Services</h6>
+             <h2 className="text-4xl lg:text-5xl font-white text-slate-900 dark:text-black tracking-tight">Our Comprehensive Psychiatric Services.</h2>
              <p className="text-slate-500 dark:text-slate-400 font-medium text-lg">
                Specialized psychiatric interventions designed to treat the whole person through scientific precision and therapeutic empathy.
              </p>
