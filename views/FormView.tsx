@@ -190,7 +190,7 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
 
         <div className="mt-12 text-center max-w-lg mx-auto">
           <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] leading-relaxed">
-            If you encounter any technical difficulties with the digital portal, please contact our administrative team directly at support@tranquilwellness.com
+            If you encounter any technical difficulties with the digital portal, please contact our administrative team directly at info@tranquilmentalhealthandwellness.com
           </p>
         </div>
       </div>

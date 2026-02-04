@@ -127,7 +127,7 @@ const CareerView: React.FC = () => {
         <div className="mt-32 p-12 bg-slate-900 rounded-[3.5rem] text-center text-white relative overflow-hidden">
            <p className="text-xs font-black uppercase tracking-[0.5em] mb-4 opacity-50">General Applications</p>
            <h3 className="text-3xl font-black mb-6">Don't see the right role?</h3>
-           <p className="text-slate-400 max-w-xl mx-auto mb-10 font-medium">We are always looking for talented psychiatric professionals. Send your CV to <span className="text-primary-400">careers@tranquilmentalhealth.com</span> for future consideration.</p>
+           <p className="text-slate-400 max-w-xl mx-auto mb-10 font-medium">We are always looking for talented psychiatric professionals. Send your CV to <span className="text-primary-400">info@tranquilmentalhealthandwellness.com</span> for future consideration.</p>
            <a href="#/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-[#CC5500] text-white rounded-2xl font-black text-lg hover:bg-[#B84D00] transition-all">Send Your CV</a>
         </div>
       </div>

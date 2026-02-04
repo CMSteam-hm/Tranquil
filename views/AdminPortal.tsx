@@ -24,7 +24,8 @@ const AdminPortal: React.FC = () => {
     "admin@tranquil.com",
     "doctor@tranquil.com",
     "manager@tranquil.com",
-    "clinical.lead@tranquil.com"
+    "clinical.lead@tranquil.com",
+    "info@tranquilmentalhealthandwellness.com"
   ];
 
   const handleLogin = (e: React.FormEvent) => {
