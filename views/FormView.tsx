@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FormType } from '../types';
 import { ShieldCheck, Info, MessageCircle, Banknote } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ interface FormViewProps {
 
 const FormView: React.FC<FormViewProps> = ({ type }) => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const WHATSAPP_NUMBER = "1234567890";
   const BOOKING_WHATSAPP_MESSAGE = encodeURIComponent("Hello! I'm trying to book a psychiatric evaluation on your website and had a few questions about availability.");
@@ -31,6 +32,28 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
         top: iframeRef.current.offsetTop - 100,
         behavior: 'smooth'
       });
+    }
+  };
+
+  const handlePHPSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch('/process.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        setFormStatus('success');
+      } else {
+        setFormStatus('error');
+      }
+    } catch (err) {
+      setFormStatus('error');
     }
   };
 
@@ -88,22 +111,81 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
 
         {/* User Provided Google Form Wrapper */}
         <div className="relative max-w-[750px] mx-auto bg-white dark:bg-slate-800 rounded-[2rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-700 overflow-hidden animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <div className="p-4 bg-amber-50 dark:bg-amber-900/10 border-b border-amber-100 dark:border-amber-800/20 flex items-center gap-3">
-            <Info className="text-amber-600" size={16} />
-            <span className="text-[10px] font-black uppercase tracking-widest text-amber-800 dark:text-amber-400">
-              Do not refresh this page until you see the confirmation message.
-            </span>
-          </div>
-          
-          <iframe 
-            ref={iframeRef}
-            onLoad={handleIframeLoad}
-            className="w-full h-[1000px] md:h-[1050px] border-none block"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdMZ0WWvyNRxpuo-e8Vzb5pGDkI1rwRcLhaXuAzdbh7ODyIGQ/viewform?embedded=true" 
-            title="Tranquil Clinical Form"
-          >
-            Loading clinical form…
-          </iframe>
+          {type === FormType.CONTACT ? (
+            <div className="p-8 md:p-12">
+              {formStatus === 'success' ? (
+                <div className="text-center py-12">
+                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <ShieldCheck size={40} />
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Message Sent!</h3>
+                  <p className="text-slate-500 dark:text-slate-400">Thank you for contacting us. We will respond shortly.</p>
+                  <button onClick={() => setFormStatus('idle')} className="mt-8 text-primary-600 font-bold hover:underline">Send another message</button>
+                </div>
+              ) : (
+                <form onSubmit={handlePHPSubmit} className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name</label>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      required 
+                      className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                    <input 
+                      type="email" 
+                      name="email" 
+                      required 
+                      className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Message</label>
+                    <textarea 
+                      name="message" 
+                      required 
+                      rows={5}
+                      className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
+                      placeholder="How can we help you?"
+                    ></textarea>
+                  </div>
+                  <button 
+                    type="submit" 
+                    disabled={formStatus === 'submitting'}
+                    className="w-full py-4 bg-primary-600 text-white rounded-xl font-black text-lg hover:bg-primary-700 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                  </button>
+                  {formStatus === 'error' && (
+                    <p className="text-center text-red-500 text-sm font-bold">Failed to send message. Please try again.</p>
+                  )}
+                </form>
+              )}
+            </div>
+          ) : (
+            <>
+              <div className="p-4 bg-amber-50 dark:bg-amber-900/10 border-b border-amber-100 dark:border-amber-800/20 flex items-center gap-3">
+                <Info className="text-amber-600" size={16} />
+                <span className="text-[10px] font-black uppercase tracking-widest text-amber-800 dark:text-amber-400">
+                  Do not refresh this page until you see the confirmation message.
+                </span>
+              </div>
+              <iframe 
+                ref={iframeRef}
+                onLoad={handleIframeLoad}
+                className="w-full h-[1000px] md:h-[1050px] border-none block"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdMZ0WWvyNRxpuo-e8Vzb5pGDkI1rwRcLhaXuAzdbh7ODyIGQ/viewform?embedded=true" 
+                title="Tranquil Clinical Form"
+              >
+                Loading clinical form…
+              </iframe>
+            </>
+          )}
         </div>
 
         <div className="mt-12 text-center max-w-lg mx-auto">

@@ -11,6 +11,7 @@ import {
 import HomeView from './views/HomeView';
 import FormView from './views/FormView';
 import PolicyView from './views/PolicyView';
+import AboutView from './views/AboutView';
 import AdminPortal from './views/AdminPortal';
 import TestimonialView from './views/TestimonialView';
 import CareerView from './views/CareerView';
@@ -245,6 +246,7 @@ const App: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/', tooltip: 'Main overview', icon: <Home size={18} /> },
+    { name: 'About', path: '/about', tooltip: 'Who we are', icon: <Users size={18} /> },
     { name: 'Testimonials', path: '/testimonials', tooltip: 'Patient experiences', icon: <Star size={18} /> },
     { name: 'Careers', path: '/careers', tooltip: 'Join our team', icon: <Briefcase size={18} /> },
     { name: 'HIPAA', path: '/hipaa', tooltip: 'Privacy policy', icon: <ShieldCheck size={18} /> },
@@ -380,6 +382,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomeView />} />
+          <Route path="/about" element={<AboutView />} />
           <Route path="/testimonials" element={<TestimonialView />} />
           <Route path="/careers" element={<CareerView />} />
           <Route path="/forms" element={<FormView type={FormType.INTAKE} />} />

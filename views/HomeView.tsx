@@ -60,27 +60,6 @@ const HomeView: React.FC = () => {
     "Trustmark Small Business-Aetna", "UnitedHealthcare UHC | UBH"
   ];
 
-  const teamMembers = [
-    {
-      name: "Dr. Evelyn Reed",
-      title: "MD, Lead Psychiatrist",
-      image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&w=600&q=80",
-      bio: "Dr. Reed is a board-certified psychiatrist with over 15 years of experience in treating complex mood and anxiety disorders.",
-    },
-    {
-      name: "Markus Chen",
-      title: "PMHNP-BC, Nurse Practitioner",
-      image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80",
-      bio: "Markus is a psychiatric nurse practitioner specializing in medication management and collaborative treatment approaches.",
-    },
-    {
-      name: "Dr. Isabella Garcia",
-      title: "Psy.D, Clinical Psychologist",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
-      bio: "Dr. Garcia leads our neuropsychological testing services, helping clients understand their cognitive and emotional functioning.",
-    },
-  ];
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
@@ -234,33 +213,6 @@ const HomeView: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet The Team Section */}
-      <section className="py-32 bg-white dark:bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-             <h6 className="text-primary-600 font-black uppercase tracking-[0.3em] text-[10px]">Our Experts</h6>
-             <h2 className="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Meet Our Clinical Team</h2>
-             <p className="text-slate-500 dark:text-slate-400 font-medium text-lg">
-               Our practice is built on the expertise and compassion of our dedicated professionals.
-             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {teamMembers.map((member, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden mb-8 shadow-xl border-8 border-white dark:border-slate-900 group-hover:-translate-y-2 transition-transform duration-300">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                </div>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white mb-1">{member.name}</h3>
-                <p className="text-primary-600 font-bold text-sm mb-4">{member.title}</p>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs mx-auto font-medium">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
