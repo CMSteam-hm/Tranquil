@@ -312,7 +312,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24 items-center">
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white font-black shadow-lg group-hover:scale-105 transition-transform">T</div>
+              <img src="/images/logo.webp" alt="Tranquil Logo" className="h-10 w-auto object-contain group-hover:scale-105 transition-transform" />
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white leading-none">Tranquil</span>
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Mental Health & Wellness</span>
@@ -406,7 +406,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-24">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-9 h-9 bg-primary-600 rounded-xl flex items-center justify-center text-white font-black">T</div>
+              <img src="/images/logo.webp" alt="Tranquil Logo" className="h-9 w-auto object-contain" />
               <span className="text-xl font-black dark:text-white">Tranquil</span>
             </Link>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-bold italic">
