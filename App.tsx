@@ -14,7 +14,6 @@ import PolicyView from './views/PolicyView';
 import AboutView from './views/AboutView';
 import AdminPortal from './views/AdminPortal';
 import TestimonialView from './views/TestimonialView';
-import CareerView from './views/CareerView';
 import { FormType } from './types';
 
 // Accessibility Settings Interface
@@ -248,7 +247,6 @@ const App: React.FC = () => {
     { name: 'Home', path: '/', tooltip: 'Main overview', icon: <Home size={18} /> },
     { name: 'About', path: '/about', tooltip: 'Who we are', icon: <Users size={18} /> },
     { name: 'Testimonials', path: '/testimonials', tooltip: 'Patient experiences', icon: <Star size={18} /> },
-    { name: 'Careers', path: '/careers', tooltip: 'Join our team', icon: <Briefcase size={18} /> },
     { name: 'HIPAA', path: '/hipaa', tooltip: 'Privacy policy', icon: <ShieldCheck size={18} /> },
   ];
 
@@ -269,7 +267,7 @@ const App: React.FC = () => {
   const GLOBAL_WHATSAPP_MESSAGE = encodeURIComponent("Hello Tranquil Mental Health! I have some questions about your services.");
 
   // Determine if we should show the "SOS" color for WhatsApp
-  const isBookingPage = location.pathname === '/booking' || location.pathname === '/contact';
+  const isBookingPage = location.pathname === '/booking';
 
   return (
     <div className={`min-h-screen flex flex-col transition-all duration-500 bg-slate-50 dark:bg-slate-950 ${getAdaClasses()}`}>
@@ -384,11 +382,9 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeView />} />
           <Route path="/about" element={<AboutView />} />
           <Route path="/testimonials" element={<TestimonialView />} />
-          <Route path="/careers" element={<CareerView />} />
           <Route path="/forms" element={<FormView type={FormType.INTAKE} />} />
           <Route path="/booking" element={<FormView type={FormType.BOOKING} />} />
           <Route path="/screening" element={<FormView type={FormType.SCREENING} />} />
-          <Route path="/contact" element={<FormView type={FormType.CONTACT} />} />
           <Route path="/feedback" element={<FormView type={FormType.FEEDBACK} />} />
           <Route path="/hipaa" element={<PolicyView type="hipaa" />} />
           <Route path="/rights" element={<PolicyView type="rights" />} />
@@ -425,8 +421,6 @@ const App: React.FC = () => {
             <h4 className="font-black mb-8 dark:text-white uppercase tracking-widest text-[10px] text-slate-400">Practice</h4>
             <ul className="space-y-4 text-sm font-bold text-slate-600 dark:text-slate-400">
               <li><Link to="/testimonials" className="hover:text-primary-600 transition-colors">Testimonials</Link></li>
-              <li><Link to="/careers" className="hover:text-primary-600 transition-colors">Career Openings</Link></li>
-              <li><Link to="/contact" className="hover:text-primary-600 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
           

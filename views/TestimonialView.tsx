@@ -12,14 +12,14 @@ const testimonials = [
   },
   {
     initials: "J.M.",
-    location: "Oregon",
+    location: "California",
     content: "I've seen several psychiatrists over the years, but the approach at Tranquil is different. It's not just a 15-minute med check; it's a deep, therapeutic partnership.",
     rating: 5,
     date: "Jan 2024"
   },
   {
     initials: "L.K.",
-    location: "Washington",
+    location: "California",
     content: "Their neuropsychological testing for my child was professional, thorough, and empathetic. We finally have a roadmap for school support.",
     rating: 5,
     date: "Dec 2023"

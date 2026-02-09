@@ -32,13 +32,13 @@ const AboutView: React.FC = () => {
       name: "Dr. Julianah Nike Olabode DNP, FNP-C, PMHNP-BC",
       title: "CEO, Tranquil Mental Health and Wellness",
       image: "/images/CEO_tranquil.webp",
-      bio: "Ms. Julianah is a board-certified psychiatrist with over 15 years of experience in treating complex mood and anxiety disorders.",
+      bio: "Julianah@tranquilmentalhealthwellnessinc.com",
     },
     {
       name: "Dr. Codie Vassar",
       title: "Psychiatrist Practitioner",
       image: "/images/Dr_Codie_Tranquil.webp",
-      bio: "Dr. Vassar is a psychiatric practitioner specializing in medication management and collaborative treatment approaches.",
+      bio: "info@tranquilmentalhealthwellness.com",
     },
   ];
 
@@ -53,7 +53,7 @@ const AboutView: React.FC = () => {
     },
     {
       q: "Do you offer telehealth appointments?",
-      a: "Yes, we offer secure, HIPAA-compliant video appointments for patients residing in California and Oregon."
+      a: "Yes, we offer secure, HIPAA-compliant video appointments for patients residing in California."
     },
     {
       q: "How long is the initial evaluation?",

@@ -87,7 +87,7 @@ const CareerView: React.FC = () => {
           <div className="flex justify-between items-end">
             <div>
               <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">Open Vacancies</h2>
-              <p className="text-slate-500 mt-2 font-medium">Join our growing practice in California and Oregon.</p>
+              <p className="text-slate-500 mt-2 font-medium">Join our growing practice in California.</p>
             </div>
           </div>
 

@@ -111,19 +111,22 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
 
         {/* User Provided Google Form Wrapper */}
         <div className="relative max-w-[750px] mx-auto bg-white dark:bg-slate-800 rounded-[2rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-700 overflow-hidden animate-in fade-in slide-in-from-bottom-8 duration-700">
-          {type === FormType.CONTACT ? (
+          {(type === FormType.CONTACT || type === FormType.SCREENING || type === FormType.FEEDBACK) ? (
             <div className="p-8 md:p-12">
               {formStatus === 'success' ? (
                 <div className="text-center py-12">
                   <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <ShieldCheck size={40} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Message Sent!</h3>
-                  <p className="text-slate-500 dark:text-slate-400">Thank you for contacting us. We will respond shortly.</p>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Submission Received!</h3>
+                  <p className="text-slate-500 dark:text-slate-400">Thank you. We have sent a confirmation email to you.</p>
                   <button onClick={() => setFormStatus('idle')} className="mt-8 text-primary-600 font-bold hover:underline">Send another message</button>
                 </div>
               ) : (
                 <form onSubmit={handlePHPSubmit} className="space-y-6">
+                  {/* Hidden field to identify form type */}
+                  <input type="hidden" name="form_type" value={type === FormType.CONTACT ? 'contact' : type === FormType.SCREENING ? 'screening' : 'feedback'} />
+                  
                   <div>
                     <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name</label>
                     <input 
@@ -144,22 +147,82 @@ const FormView: React.FC<FormViewProps> = ({ type }) => {
                       placeholder="name@example.com"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Message</label>
-                    <textarea 
-                      name="message" 
-                      required 
-                      rows={5}
-                      className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
-                      placeholder="How can we help you?"
-                    ></textarea>
-                  </div>
+
+                  {/* Contact Form Specifics */}
+                  {type === FormType.CONTACT && (
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Message</label>
+                      <textarea 
+                        name="message" 
+                        required 
+                        rows={5}
+                        className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
+                        placeholder="How can we help you?"
+                      ></textarea>
+                    </div>
+                  )}
+
+                  {/* Screening Form Specifics */}
+                  {type === FormType.SCREENING && (
+                    <>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number</label>
+                        <input 
+                          type="tel" 
+                          name="phone" 
+                          required 
+                          className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                          placeholder="(555) 000-0000"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Briefly describe your symptoms</label>
+                        <textarea 
+                          name="symptoms" 
+                          required 
+                          rows={5}
+                          className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
+                          placeholder="I have been feeling..."
+                        ></textarea>
+                      </div>
+                    </>
+                  )}
+
+                  {/* Feedback Form Specifics */}
+                  {type === FormType.FEEDBACK && (
+                    <>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Rating</label>
+                        <select 
+                          name="rating" 
+                          className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all appearance-none"
+                        >
+                          <option value="5">5 - Excellent</option>
+                          <option value="4">4 - Very Good</option>
+                          <option value="3">3 - Good</option>
+                          <option value="2">2 - Fair</option>
+                          <option value="1">1 - Poor</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Comments</label>
+                        <textarea 
+                          name="comments" 
+                          required 
+                          rows={5}
+                          className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"
+                          placeholder="Share your experience..."
+                        ></textarea>
+                      </div>
+                    </>
+                  )}
+
                   <button 
                     type="submit" 
                     disabled={formStatus === 'submitting'}
                     className="w-full py-4 bg-[#CC5500] text-white rounded-xl font-black text-lg hover:bg-[#B84D00] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                    {formStatus === 'submitting' ? 'Sending...' : 'Submit Form'}
                   </button>
                   {formStatus === 'error' && (
                     <p className="text-center text-red-500 text-sm font-bold">Failed to send message. Please try again.</p>
