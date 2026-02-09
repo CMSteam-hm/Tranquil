@@ -408,6 +408,10 @@ const App: React.FC = () => {
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-bold italic">
               "At Tranquil Mental Health and Wellness, we specialize in providing comprehensive psychiatric care with a focus on individualized treatment."
             </p>
+            <div className="space-y-1 text-sm font-bold text-slate-600 dark:text-slate-400">
+              <p>Phone: (209) 723-0370</p>
+              <p>Email: info@tranquilmentalhealthwellness.com</p>
+            </div>
             <div className="flex space-x-3 pt-2">
               {[Twitter, Linkedin, Facebook, Instagram].map((Icon, idx) => (
                 <a key={idx} href="#" className="w-10 h-10 bg-slate-50 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:text-primary-600 hover:bg-primary-50 transition-all border border-slate-100 dark:border-slate-700">

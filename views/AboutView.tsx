@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Target, Heart, HelpCircle, ArrowRight } from 'lucide-react';
+import { Users, Target, Heart, HelpCircle, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 //import InsuranceGrid from '../components/InsuranceGrid';
 
@@ -10,6 +10,7 @@ const InsuranceGrid: React.FC = () => {
     { name: 'Cigna', src: '/images/Cigna-Logo.png' },
     { name: 'Carelon', src: '/images/carelon-logo.png' },
     { name: 'Anthem', src: '/images/Anthem.png' },
+    { name: 'United Healthcare', src: '/images/unitedhealthcare.webp' },
   ];
 
   return (
@@ -32,13 +33,15 @@ const AboutView: React.FC = () => {
       name: "Dr. Julianah Nike Olabode DNP, FNP-C, PMHNP-BC",
       title: "CEO, Tranquil Mental Health and Wellness",
       image: "/images/CEO_tranquil.webp",
-      bio: "Julianah@tranquilmentalhealthwellnessinc.com",
+      email: "Julianah@tranquilmentalhealthwellnessinc.com",
+      phone: "(209) 723-0370"
     },
     {
       name: "Dr. Codie Vassar",
       title: "Psychiatrist Practitioner",
       image: "/images/Dr_Codie_Tranquil.webp",
-      bio: "info@tranquilmentalhealthwellness.com",
+      email: "info@tranquilmentalhealthwellness.com",
+      phone: "(209) 723-0370"
     },
   ];
 
@@ -110,9 +113,14 @@ const AboutView: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-black text-slate-900 dark:text-white mb-1">{member.name}</h3>
                 <p className="text-primary-600 font-bold text-sm mb-4">{member.title}</p>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs mx-auto font-medium">
-                  {member.bio}
-                </p>
+                <div className="flex flex-col items-center gap-2">
+                  <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary-600 transition-colors">
+                    <Mail size={14} /> {member.email}
+                  </a>
+                  <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary-600 transition-colors">
+                    <Phone size={14} /> {member.phone}
+                  </a>
+                </div>
               </div>
             ))}
           </div>
