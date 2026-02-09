@@ -67,6 +67,13 @@ const HomeView: React.FC = () => {
       desc: "Providing compassionate care to promote emotional well-being during pregnancy and postpartum.",
       image: "/images/perintal.webp",
       longDesc: "We provide specialized care for perinatal mood and anxiety disorders, supporting women through the emotional transitions of pregnancy and postpartum. Our compassionate approach promotes well-being during this critical time."
+    },
+    {
+      title: 'Women’s health including Hormone replacement therapy',
+      icon: <Award />,
+      desc: "As part of our comprehensive women's health services, we offer Hormone Replacement Therapy (HRT). Our team provides personalized plans to restore hormonal balance and alleviate symptoms of menopause or other hormonal changes.",
+      image: "/images/replacement.webp",
+      longDesc: "Hormonal fluctuations can significantly impact mental health. Our integrated approach addresses both the physiological and psychological aspects of women's health. HRT plans are developed after thorough evaluation and are continuously monitored to ensure they align with your overall health and wellness goals, providing relief and enhancing quality of life."
     }
   ];
 
